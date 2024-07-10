@@ -5,7 +5,7 @@ This project is created with angular CLI 16
 this is a credit card processing through Worldpay
 
 # Dependencie
-`add these to youe package.json and install
+add these to youe package.json and install
 `"@ng-bootstrap/ng-bootstrap": "15.1.2",`
 `"angular-cc-library": "3.2.0",`
 `"bootstrap": "^4.4.1"`
