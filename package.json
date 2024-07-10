@@ -1,0 +1,19 @@
+{
+  "name": "payments-wp",
+  "version": "1.0.3",
+  "scripts": {
+    "build:lib": "ng build payments-wp --configuration=production",
+    "pack-lib": "cd dist/nishu-library && npm pack"
+  },
+  "peerDependencies": {
+    "@angular/common": "^16.1.0",
+    "@angular/core": "^16.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "@types/node": "^20.14.9"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "payments-wp": {
+      "projectType": "library",
+      "root": "projects/payments-wp",
+      "sourceRoot": "projects/payments-wp/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/payments-wp/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/payments-wp/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/payments-wp/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/payments-wp/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
