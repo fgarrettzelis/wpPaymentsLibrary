@@ -1,0 +1,15 @@
+<div *ngIf="!currencySymbol; else numberInput">
+    <label for="cntrlID" [attr.aria-label]="labelTitle" [ngClass]="{'input-label' : !toggleClass, 'input-label--active': toggleClass}">{{labelTitle}} <span *ngIf="required" class="required">*</span></label>
+    <input type="{{inputType}}" class="nbr" [attr.id]="cntrlID" [attr.autocomplete]="autoComplete" [(ngModel)]="inputValue" [maxlength]="maxlength" [minlength]="minlength" placeholder="{{inputText}}" (ngModelChange)="onChange()" 
+    (click)="toggleLabel()" (focus)="focusing()" (focusout)="focusOut($event)" [ngClass]="{'input-error' : errorMessage.length > 0, 'regularMargin': !gridMargin, 'grdMargin': gridMargin }" [readonly]="readonly" [disabled]="disabled"
+    (keypress)="keyPressed($event)" (paste)="isPasteNumeric($event)" aria-live="assertive" [attr.aria-label]="ariaLabel">
+    <div *ngIf="errorMessage.length > 0"  class="input-error--message text-danger" role="alert" [ngClass]="{'text-danger' : !gridMargin, 'grid-danger' : gridMargin}">{{errorMessage}}</div> 
+</div>
+
+<ng-template #numberInput>
+    <label for="cntrlID" [attr.aria-label]="labelTitle" [ngClass]="{'input-label' : !toggleClass, 'input-label--active': toggleClass}">{{labelTitle}} <span *ngIf="required" class="required">*</span></label>
+    <input type="text" [attr.id]="cntrlID" [attr.autocomplete]="autoComplete" [(ngModel)]="inputValue" [maxlength]="maxlength" [minlength]="minlength" placeholder="{{inputText}}" (ngModelChange)="onChange()"
+    (click)="toggleLabel()" (focus)="focusing()" (focusout)="focusOut($event)" (blur)="onBlurInput()" [ngClass]="{'input-error' : errorMessage.length > 0, 'regularMargin': !gridMargin, 'grdMargin': gridMargin}" [readonly]="readonly" [disabled]="disabled"
+    (keypress)="keyPressed($event)" (paste)="isPasteNumeric($event)" (input)="allowNumbersOnly($event)" aria-live="assertive" [attr.aria-label]="ariaLabel">
+    <div *ngIf="errorMessage.length > 0"  class="input-error--message text-danger" role="alert" [ngClass]="{'text-danger' : !gridMargin, 'grid-danger' : gridMargin}">{{errorMessage}}</div>
+</ng-template>

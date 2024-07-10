@@ -1,0 +1,13 @@
+<div class="payspan-dropdown" ngbDropdown #itDrop="ngbDropdown">
+  <div *ngIf="labelTitle.length > 0">
+    <label [ngClass]="{'input-label' : !toggleClass, 'input-label--active': toggleClass}">{{labelTitle}} <span *ngIf="required" class="required">*</span></label>
+  </div>  
+  <button class="payspan__dropdown" [disabled]="disabled" (click)="toggleLabel();" (blur)="onBlurInput()" [attr.id]="cntrlID" [attr.aria-label]="labelTitle" ngbDropdownToggle>{{(selectedItem && selectedItem != '' && selectedItem.text ) ? selectedItem.text : placeholder ? placeholder : selectedItem}}</button>
+  <div  class="dropdown-menu" ngbDropdownMenu aria-labelledby="cntrlID">
+    <button class="dropdown-item" ngbDropdownItem *ngFor="let item of data" (click)="itemSelected(item); objectSelected(item)">
+      {{item.text ? item.text : item}}
+    </button>
+    
+  </div>
+</div>
+<div *ngIf="errorMessage.length > 0" role="alert" class="input-error--message text-danger">{{errorMessage}}</div>

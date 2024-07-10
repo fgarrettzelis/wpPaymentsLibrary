@@ -1,0 +1,66 @@
+<div class="form-group" [formGroup]="paymentForm">
+    <p aria-level="2" role="heading" id="Payment-Information" class="title">{{'Payment Info'}}</p>
+    <label class="msg"><span class="required">*</span> {{'Required fields'}}</label>
+  <div role="group" aria-labelledby="Payment-Information">
+    <div class="row space">
+        <div class="col-sm-12" aria-live="assertive">
+            <app-input autoComplete="cc-name" [ariaLabel]="nameOnLabel" [labelTitle]="nameOnLabel" [maxlength]="'100'" [inputText]="nameOnLabel" [inputValue]="name.value"
+                [errorMessage]="nameError" (valueChanged)="getName($event)" [required]="true">
+            </app-input>
+        </div>
+    </div>
+    <div class="row space">
+        <div class="col-sm-4 adjNum" aria-live="assertive">
+            <app-input [autoComplete]="'cc-number'" [ariaLabel]="'Card Number'" [labelTitle]="'Card Number'" [inputText]="'Card Number'"
+                [inputValue]="cardNumber.value" class="payspan-input--creditcard" [errorMessage]="cardNumberError"
+                [required]="true" (valueChanged)="getcardNumber($event)" 
+                (givebackControl)="getBackcardNumControl($event)"
+                [maxlength]="'16'" (keypress)="keyPress($event)"
+                (paste)="isPasteNumericInput($event)">
+            </app-input>
+            <span class="wpCCError">{{wpCardError}}</span>
+        </div>
+        <div class="padExplicit" aria-live="assertive">
+            <app-dropdown-date [ariaLabel]="'Expiration Date'" [month]='true' [required]="true" [year]='true' [selectedMonthOrder]="expirationMonth.value"
+                [selectedYearOrder]="expirationYear.value" [errorMonthMessage]='monthError' [errorYearMessage]='yearError'
+                (monthClicked)="changeExpirationMonth($event)" (yearClicked)="changeExpirationYear($event)"
+                [dateLable]="'Expiration Date'">
+            </app-dropdown-date>
+        </div>
+        <div class="padExplicit widthExplicit adjCVV" aria-live="assertive">
+            <app-input [autoComplete]="'cc-csc'" [ariaLabel]="'CVV'" [labelTitle]="'CVV'" [required]="true" [inputText]="'cvv'"
+                [inputValue]="cvvCode.value" class="payspan-input--small" [maxlength]="'4'" [errorMessage]="cvvError" (givebackControl)="getBackCVVControl($event)"
+                (valueChanged)="getCVV($event)" (keypress)="keyPress($event)">
+            </app-input>
+        </div>        
+        <!-- <div class="adjMBL" (mouseout)="cvvClose()" (mouseover)="cvv()">
+            <div tabindex="0" (focus)="cvv()" (focusout)="cvvClose()" >
+                <fa-icon class="payspan-icon payspan-icon--default mt-4" [icon]="faQuestionCircle">
+                </fa-icon>
+               
+            </div>
+             <div [hidden]="!showCVV" class="pop">
+                <app-cvv-popover>
+                </app-cvv-popover>
+            </div> 
+        </div> -->
+    </div>
+    <div class="row">
+        <div class="col-sm-12 pay-align">
+            <div class="pay__icons-label">{{'Supported card types'}} </div>
+            <div>
+                <img alt="visa" src="../../../assets/svg/visa.svg" class="svgIcon">
+            </div>
+            <div>
+                <img alt="master" src="../../../assets/svg/masterCard.svg" class="svgIcon">
+            </div>
+            <div>
+                <img alt="amex" src="../../../assets/svg/amex.svg" class="svgIcon">
+            </div>
+            <div>
+                <img alt="discover" src="../../../assets/svg/discover.svg" class="svgIcon">
+            </div>
+        </div>
+    </div>
+ </div>  
+</div>

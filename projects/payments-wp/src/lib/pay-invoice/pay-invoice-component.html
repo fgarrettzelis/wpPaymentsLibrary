@@ -1,0 +1,47 @@
+﻿<div class="overflow pay">
+  <div class="container-fluid containeMBL">
+       
+    <form class="frmMBL">
+
+      <div *ngIf="paymentForm" class="form-group" [formGroup]="paymentForm">
+        <div class="row greyMBL">
+          <div class="col-sm-12 order-sm-1 order-2 greyMBL">
+            <div class="payInfo" >
+              <fieldset>
+
+                <br>
+                <div *ngIf="selectedPaymentMethodType===PAYMENTMETHOD_CC">
+                  <app-payment-cc [paymentForm]="paymentForm" 
+                                  [nameOnLabel]="nameOnLabel" 
+                                  [orgAcceptedCreditCards]="orgAcceptedCreditCards" 
+                                  (givebackCardNumControl)="getBackCardNumControl($event)"
+                                  (givebackCVVControl)="getBackCVVControl($event)">
+                  </app-payment-cc>
+                  <input type="hidden" id="eprotectxpdate" name="eprotectxpdate"/>
+                </div>
+
+                <div class="spacer-10"></div>
+                <!-- <app-billing-address [paymentForm]="paymentForm" [zipTooltip]="zipTooltip"></app-billing-address> -->
+              </fieldset>
+
+            </div>
+          </div>
+
+        </div>
+        <br>
+
+        <div class="row">
+          <div class="col-sm-5"></div>
+
+          <div class="col-sm-2 col-3">
+            <app-button-secure [disabled]="!paymentForm.valid"
+                               (click)="submitPaymentWP(paymentForm.value)" [text]="'Get Token'">
+            </app-button-secure>
+          </div>
+          <div class="col-sm-5"></div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

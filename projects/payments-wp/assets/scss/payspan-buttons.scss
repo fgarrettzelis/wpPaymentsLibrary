@@ -1,0 +1,29 @@
+button.payspan-btn {
+  display: block;
+  margin: 10px auto;
+  outline: none;
+  transition: background-color 0.3s;
+  width: 100%;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 3px;
+  color: #fff;
+  text-align: center;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 10px 15px;
+  line-height: 1.5;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  overflow: hidden;
+  cursor: pointer;
+  line-height: 25px;
+&:focus {
+  outline: unset;
+}
+&:disabled  {
+  border-color: #6c757d;
+  color: #FFFFFF;
+  opacity: 0.4;
+  }
+}

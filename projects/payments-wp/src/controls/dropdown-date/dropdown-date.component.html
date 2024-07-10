@@ -1,0 +1,70 @@
+  <div *ngIf="day == false">
+    <label [attr.id]="dateLabelId" class="input-label--active wrap">{{dateLable}} <span *ngIf="required" class="required">*</span></label>
+    <div class="row" role="group" [attr.aria-labelledby]="dateLabelId">
+      <div [ngClass]="{'col-sm-6' : !year || !day, 'col-sm-4' : year && month && day}">
+        <div ngbDropdown placement="bottom-left" class="payspan-dropdown--year" *ngIf="year">
+          <button class="payspan__dropdown" [attr.aria-label]="'Year dropdown ' + selectedYearOrder" [attr.id]="yearID" role="button" ngbDropdownToggle>{{selectedYearOrder}}</button>
+          <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="YearDropdown">
+            <button class="dropdown-item" ngbDropdownItem href="#" *ngFor="let selectYear of selectYears" (click)="changeYearOrder(selectYear)" [attr.aria-label]="'Year' + selectYear">{{selectYear}}</button>
+          </div>
+          <div *ngIf="errorYearMessage.length > 0" role="alert" class="input-error--message">{{errorYearMessage}}</div>
+        </div>  
+      </div>
+      <div [ngClass]="{'col-sm-6' : !year || !day, 'col-sm-4' : year && month && day}">
+        <div ngbDropdown placement="bottom-left" class="payspan-dropdown--month mt" *ngIf="month">
+          <label class="input-label--active">&nbsp;</label>
+          <button class="payspan__dropdown" [attr.aria-label]="'Month dropdown ' + selectedMonthOrder" [attr.id]="monthID" role="button" ngbDropdownToggle>{{selectedMonthOrder}}</button>
+          <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="MonDropdown">
+            <button class="dropdown-item" ngbDropdownItem href="#" *ngFor="let selectMonth of selectMonths" (click)="changeMonthOrder(selectMonth)" [attr.aria-label]="'Month ' + selectMonth">{{selectMonth}}</button>
+          </div>
+          <div *ngIf="errorMonthMessage.length > 0" role="alert" class="input-error--message">{{errorMonthMessage}}</div>
+        </div>
+      </div>
+      <div [ngClass]="{'col-sm-6' : !year || !day, 'col-sm-4' : year && month && day}">
+        <div ngbDropdown placement="bottom-left" class="payspan-dropdown--day" *ngIf="week">
+          <label class="input-label--active">&nbsp;</label>
+          <button class="payspan__dropdown"  [attr.aria-label]="'Week dropdown ' + selectedWeekOrder" [attr.id]="dayID" role="button" ngbDropdownToggle>{{selectedWeekOrder}}</button>
+          <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="WeekDropdown">
+            <button class="dropdown-item" ngbDropdownItem href="#" *ngFor="let selectWeek of selectWeeks" (click)="changeWeekOrder(selectWeek)" [attr.aria-label]="'Week ' + selectWeek">{{selectWeek}}</button>
+          </div>  
+          <div *ngIf="errorWeekMessage.length > 0" role="alert" class="input-error--message">{{errorWeekMessage}}</div>  
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+
+<div *ngIf="day">  
+  <label [attr.id]="dateLabelId" class="input-label--active">{{dateLable}} <span *ngIf="required" class="required">*</span></label>
+  <div class="row" role="group" [attr.aria-labelledby]="dateLabelId">
+    <div class="col-sm-4">
+      <div ngbDropdown placement="bottom-left" class="payspan-dropdown--day" *ngIf="month">
+        <button class="payspan__dropdown" [attr.aria-label]="'Month dropdown ' + selectedMonthOrder" [attr.id]="monthID" role="button" ngbDropdownToggle>{{selectedMonthOrder}}</button>
+        <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="MonDropdown">
+          <button class="dropdown-item" ngbDropdownItem href="#" *ngFor="let selectMonth of selectMonths" (click)="changeMonthOrder(selectMonth)" [attr.aria-label]="'Month ' + selectMonth">{{selectMonth}}</button>
+        </div>   
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div ngbDropdown placement="bottom-left" class="payspan-dropdown--day mt" *ngIf="day">
+        <label class="input-label--active">&nbsp;</label>
+        <button class="payspan__dropdown" [attr.aria-label]="'Day dropdown ' + selectedDayOrder" [attr.id]="dayID" role="button" ngbDropdownToggle>{{selectedDayOrder}}</button>
+        <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="DayDropdown">
+          <button class="dropdown-item" ngbDropdownItem href="#" *ngFor="let selectDay of selectDays" (click)="changeDayOrder(selectDay)" [attr.aria-label]="'Day' + selectDay">{{selectDay}}</button>
+        </div>    
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div ngbDropdown placement="bottom-left" class="payspan-dropdown--year mt" *ngIf="year">
+        <label class="input-label--active">&nbsp;</label>    
+        <button class="payspan__dropdown" [attr.aria-label]="'Year dropdown ' + selectedYearOrder" [attr.id]="yearID" role="button" ngbDropdownToggle>{{selectedYearOrder}}</button>
+        <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="YearDropdown">
+          <button class="dropdown-item" ngbDropdownItem href="#" *ngFor="let selectYear of selectYears" (click)="changeYearOrder(selectYear)" [attr.aria-label]="'Year' + selectYear">{{selectYear}}</button>
+        </div>    
+    </div>
+    </div>
+  </div>  
+    <div *ngIf="errorYearMessage.length > 0" role="alert" class="input-error--message">{{errorYearMessage}}</div> 
+</div>   

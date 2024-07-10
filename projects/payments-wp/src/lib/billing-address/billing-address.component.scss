@@ -1,0 +1,14 @@
+@import "../assets/scss/payspan-variables.scss";
+:host {
+    width:100%
+}
+.title{
+    font-family: $font-family-base;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+}
+.inherit{
+    padding-top: 14px;
+}

@@ -1,0 +1,81 @@
+@import "../../lib/assets/scss/payspan-variables.scss";
+:host {
+    width:100%
+}
+.title{
+    font-family: $font-family-base;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+}
+.msg{
+    font-weight: 200;
+    font-size: 10px;
+    display: flex;
+    margin-top: -15px;
+}
+.required{
+    color: #E52424 !important;
+}
+.pop{
+    display: flex;
+    position: absolute;    
+    @media (max-width: 600px) and (min-width: 300px) {
+        margin-left: -80px;
+    }
+    z-index: 10;
+}
+.padExplicit {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.widthExplicit{
+ width: 100px;
+}
+.space{
+    margin-bottom: 5px;
+}
+.pay-align {
+    display: flex;
+    align-items: center;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    word-wrap: break-word; 
+    white-space: pre-line;
+}
+.payspan-icon--default {
+    color: #4E6073 !important;
+    font-size: 2em;
+    top: 0;
+    left: 0;
+}
+.svgIcon{
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-self: center;
+    margin: 0px 10px 0px 0px;
+  }
+  .pay__icons-label {
+    font-size: 10px;
+    padding-right: 15px;
+    margin: 0;
+    color: #4b506d;
+  }
+  .adjMBL {
+    @media (max-width: 499px) and (min-width: 300px) {
+        margin-top: 20px;
+    }
+  }
+  .wpCCError {
+    color: red;
+    font-size: 10px;
+  }
+
+  .adjCVV {
+    margin-top: 7px;
+  }
+  .adjNum {
+    margin-top: 5px;
+  }

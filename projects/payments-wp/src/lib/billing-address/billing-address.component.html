@@ -1,0 +1,50 @@
+<div class="form-group" [formGroup]="paymentForm">
+    <p aria-level="2" role="heading" id="Billing-Address" class="title">{{'Billing Address'}}</p>
+  <div role="group" aria-labelledby="Billing-Address">
+    <div class="row">
+        <div class="col-sm-6" aria-live="assertive">
+            <app-input [autoComplete]="'address-line1'" [ariaLabel]="'address1'" [labelTitle]="'address1'" [inputValue]="address1.value"
+                [required]="true" [inputText]="'Address'" [maxlength]="'35'"
+                [errorMessage]="addressError" (valueChanged)="getAddress1($event)">
+            </app-input>
+        </div>
+        <div class="col-sm-6">
+            <app-input [autoComplete]="'address-line2'" [ariaLabel]="'address2'" [labelTitle]="'address2'" [inputText]="'Optional'" [maxlength]="'35'"
+                [inputValue]="address2.value" [errorMessage]="address2Error" (valueChanged)="getAddress2($event)">
+            </app-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 inherit" aria-live="assertive">
+            <app-input [autoComplete]="'address-line2'" [ariaLabel]="'city'" [labelTitle]="'city'" [inputValue]="billingCity.value" [required]="true"
+                [inputText]="'city'" [maxlength]="'25'" [errorMessage]="cityError"
+                (valueChanged)="getCity($event)">
+            </app-input>
+        </div>
+        <div class="col-sm-4">
+            <!-- <app-dropdown-safari [data]="states"
+                [selectedItem]="billingState.value"
+                [labelTitle]="'state'"
+                [required]="true"
+                [errorMessage]="stateError"
+                (selector)="state($event)">
+            </app-dropdown-safari> -->
+
+            <app-dropdown [data]="states"
+                [selectedItem]="billingState.value"
+                [labelTitle]="'state'"
+                [required]="true"
+                [errorMessage]="stateError"
+                (selector)="state($event)">
+            </app-dropdown>
+            
+        </div>
+        <div class="col-sm-4 inherit" aria-live="assertive">            
+                <app-input [autoComplete]="'postal-code'" [ariaLabel]="'zip'" [labelTitle]="'zip'" [inputValue]="billingZipCode.value"
+                    [required]="true" [inputText]="'zip'" [errorMessage]="zipError" [maxlength]="'5'"
+                    (valueChanged)="getZip($event)" (keypress)="keyPress($event)">
+                </app-input>
+        </div>
+    </div>
+</div> 
+</div>

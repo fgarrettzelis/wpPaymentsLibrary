@@ -1,0 +1,96 @@
+// Brand
+$primary: #017BC1;
+$primary-hover: #2f679e;
+$secondary: #2f80ed;
+$secondary-hover: #2f679e;
+$success: #178261;
+$danger: #DC2E1E;
+$danger-focus-color: #c0392b;
+$danger-hover-color: #c0392b;
+$info: #050505;
+$white: #ffffff;
+$black: #000000;
+$body-text: #4b506d;
+$disabled: #6c757d;
+$disabled-text: #4e555b;
+
+// Font Family
+$font-family-base:  Muli !default;
+
+// dropshadows
+$dropshadow-button-focus: 0 0 0 0.2rem;
+$dropshadow-focus:  0 0 0 0.2rem rgba(#6c757d, 0.2);
+$dropshadow-modal:  0 8px 16px rgba(0, 0, 0, 0.16);
+$box-shadow-sm:               0 .125rem .25rem rgba($black, .075);
+$box-shadow:                  0 .5rem 1rem rgba($black, .15);
+$box-shadow-lg:               0 1rem 3rem rgba($black, .175);
+
+// Cards
+$card-background-color: #f8fafb;
+
+// Toolbar colors
+$toolbar-text: #4E6073;
+
+// Forms
+$checkbox-label-color: #252631;
+$input-label-color: #4E6073;
+$input-background-color: #f0f1f7;
+$input-danger-label-color: #E52424;
+$input-label-subtext: #4E6073;
+
+// Dropdown
+$dropdown-bg: #FFFFFF !important;
+$dropdown-text: #4E6073;
+$dropdown-active-color: #363740;
+$dropdown-shadow:  0 0 4px rgba(0, 0, 0, 0.1);
+
+// Grays
+$gray100: #DFE0EB;
+$gray200: #e8ecef;
+$gray300: #f0f1f7;
+$gray400: #d2dbe0;
+$gray500: #4E6073;
+$gray600: #666B7A;
+$gray700: #FCFDFE;
+
+$dark-gray100: #252733;
+$dark-gray200: #2C2C2C;
+$dark-gray300: #363740;
+$dark-gray400: #3E404A;
+$dark-gray500: #252631;
+
+
+// Font sizes
+$font-size-10: 10px;
+$font-size-11: 11px;
+$font-size-12: 12px;
+$font-size-13: 13px;
+$font-size-14: 14px;
+$font-size-15: 15px;
+
+$notification-info: #4E6073;
+$notification-sucess: #444;
+$notification-danger: $danger;
+$notification-link: #FCFDFE;
+
+// Padding sizes
+$padding-t-30: 30px;
+
+// Sidebar Menu
+$menu-active: #303139;
+$menu-border: #444444;
+$menu-bg-color: #363740;
+
+// Tabs
+$tab-link: #252631;
+
+// Avatar
+$avatar-bg: #f2f2f2;
+
+//Fidelis
+$primary-fidelis: #0097A4;
+$primary-hover-fidelis: #005869;
+
+$psnfade1: #2f679e;
+$psnfade2: #1c7db8;
+$psnfade3: #009fdf;

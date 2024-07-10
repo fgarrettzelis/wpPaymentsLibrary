@@ -1,0 +1,54 @@
+@import '../../lib/assets/scss/payspan-inputs.scss';
+
+.group {
+  position: relative;
+  margin: 40px 0 0 0;
+}
+
+.input-error--message {  
+  font-size: 10px;
+  white-space: pre;
+}
+
+.input-error {
+  color: #4b506d;
+  border-color: #DC2E1E;
+}
+.grid-danger {
+  color: #B42518;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+app-inupts {
+  width: 100%;
+  margin: 20px 20px 20px 0;
+}
+.required {
+  color: #E52424 !important;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input {
+  @media (max-width: 499px) and (min-width: 300px) {
+    font-size: 16px !important;
+  }
+}
+.nbr {
+  -moz-appearance: textfield;
+}
+.grdMargin {
+  margin-top: -40px !important;
+}
+.regularMargin {
+  margin-top: 0px !important;
+}

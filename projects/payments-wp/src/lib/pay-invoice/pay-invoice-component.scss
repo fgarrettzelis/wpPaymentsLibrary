@@ -1,0 +1,220 @@
+﻿@import "../assets/scss/payspan-variables.scss";
+:host {
+  width:100%
+}
+.pay{
+  background-color: #F4F6F7;
+  width: 100%;
+  @media (max-width: 4000px) and (min-width: 600px) {
+    padding: 0px 5px;
+  }  
+  min-height: 85%;
+}
+.head{
+  background-color: #ffffff;
+  border-radius: 3px;
+  margin-bottom: 25px;
+  padding: 30px 5px;
+  min-height: 210px;
+  overflow: auto;
+  margin-top: -70px;
+}
+.body{
+  margin-top: 50px;
+}
+.payInfo{
+  min-height: 400px;
+  background-color: #ffffff;
+  padding: 30px 15px;
+  background: #FFFFFF;
+  border-radius: 4px;
+}
+.info{
+  position: relative;
+  top: 5px;
+  left: 5px; 
+}
+.paySummary{
+  min-height: 40%;
+  background-color: #ffffff;
+  padding: 30px 15px;
+  border-radius: 3px;
+}
+
+.title{
+  font-family: $font-family-base;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+}
+.subTitle{
+  font-family: $font-family-base;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  text-transform: uppercase;
+  color: $gray600;
+  text-align: center;
+  padding-top: 10px;
+}
+.space{
+  margin-bottom: 5px;
+}
+.dateMargin {
+  margin-top: 10px;
+}
+.svgIcon{
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-self: center;
+  margin: 0px 10px 0px 0px;
+}
+.marAuto{
+  margin: auto !important;
+  padding-top: 35px;
+}
+.crd {
+  width: 40px;
+}
+.divPay{
+  border-radius: 5px;
+  border: 1.5px solid $gray600;
+  width: 170px;
+  height: 110px;
+  float: left;
+  margin: 10px 15px 0px 14px;
+  @media (max-width: 320px) {
+    width: 140px;
+    margin: 10px 5px 0px 4px;
+  }
+  @media (max-width: 991.98px) and (min-width: 320px) {
+    width: 140px;
+    margin: 10px 5px 0px 4px;
+  }
+}
+.divPayActive{
+  border: 1.5px solid $primary;
+}
+.successColor {
+  color: #1D6355;
+  font-size: 1.5em;
+  float: right;
+  margin: -10px;
+  background-color: white;
+}
+.disableLook{
+  background-color:#Fcfcfc;// #F2f2f3;//#efeff0; //#Fcfcfc
+}
+
+.review{
+  min-height: 45vh;;
+}
+.solid-error {
+  border-style: solid;
+  border-color: red;
+  border-width: 1px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+.solid-success {
+  border-style: solid;
+  border-color: #76d7c4;
+  border-width: 1px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+.success {
+  color: #76d7c4;
+  font-size: 1.2em;
+}
+@media (max-width: 1200px) and (min-width: 320px) {
+  .col-4 {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+}
+
+.rel{
+  display: flex;
+}
+.hideMBL {
+  @media (max-width: 600px) and (min-width: 300px) {
+    display: none !important;
+  }
+}
+.hideWeb {
+  @media (max-width: 4000px) and (min-width: 600px) {
+    display: none !important;
+  }
+}
+.containeMBL {
+  @media (max-width: 600px) and (min-width: 300px) {
+    padding-right: 0px !important;
+    padding-left: 0px !important;    
+  }
+}
+.captcha {
+  @media (max-width: 600px) and (min-width: 300px) {
+    margin-left: -12px !important;
+    margin-top: -18px !important;    
+  }
+}
+.frmMBL {
+  @media (max-width: 600px) and (min-width: 300px) {
+    background-color: white !important;    
+  }
+}
+.greyMBL {
+  @media (max-width: 600px) and (min-width: 300px) {
+    margin-top: -40px !important;    
+  }
+}
+.icnMBL {
+  width: 65px;
+  height: 80px;
+  padding-top: 5px;
+}
+.faMBL {
+  margin-left: 15px;
+}
+.gpay {
+  padding-top: 10px;
+}
+.gpayIC {
+  padding-top: 35px;
+  padding-left: 50px;
+}
+.gMbl {
+  padding-left: 5px;
+}
+.mblContent {
+  display: none;
+}
+.webContent {
+  display: inline;
+}
+.gIcon {
+  margin-top: -8px;
+  margin-right: 40px;
+  margin-left: -15px;
+}
+.gIconMBL {
+  margin-top: 10px;
+  margin-right: 1px;
+  margin-left: -2px;
+}
+.aIcon {
+  width: 80px;
+  margin-top: -8px;
+  margin-right: 35px;
+  margin-left: -10px;
+}
+.aIconMBL {
+  width: 40px;
+  margin-top: 22px;
+  margin-right: 50px;
+  margin-left: 10px;
+}

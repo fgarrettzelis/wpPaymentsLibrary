@@ -1,0 +1,136 @@
+@import "../../assets/scss/payspan-variables.scss";
+
+/* INPUTS ======================================= */
+input[disabled],
+fieldset[disabled] {
+  background-image: none;
+  border-bottom: 1px dotted rgba(165, 181, 203, 0.5);
+  color: $gray400;
+  background: $input-background-color;
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+input {
+  box-sizing: border-box;
+  margin: 0 20px 10px 0 !important;
+  padding: 5px 0 5px 0;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $gray100;
+  background-color: transparent !important;
+  font-family: $font-family-base;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 30px !important;
+  letter-spacing: 0.3px;
+  color: $body-text;
+  
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid $primary;
+  color: $body-text;
+  opacity: unset;
+}
+
+input:active {
+  outline: none;
+  //  border-bottom: 1px solid $body-text;
+  color: $body-text;
+  opacity: unset;
+}
+
+/* LABELS ======================================= */
+
+.input-label {
+  font-family: $font-family-base;
+  font-style: normal;
+  font-size: $font-size-11;
+  line-height: 14px;
+ // letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin: 0;
+  color: $input-label-color;
+  position: relative;
+  pointer-events: none;
+ // transition: 0.2s ease all;
+}
+
+/* active state */
+.input-label--active,
+.input-label--active:focus-within{
+  color: $primary;
+  font-size: $font-size-11;
+  line-height: 14px;
+  position: relative;
+  margin: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* active state */
+.input-label:focus ~ label,
+.input-label:valid ~ label {
+  top: -20px;
+  font-size: $font-size-11;
+  line-height: 14px;
+}
+
+// Checkboxes
+input[type=checkbox].payspan-checkbox  {
+  height: 20px;
+  width: 20px;
+  display: inline-block !important;
+  vertical-align: middle;
+  margin: 0 15px 0px 0 !important;
+}
+
+.payspan-checkbox-label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+    color: $checkbox-label-color;
+    text-transform: inherit;
+    display: inline;
+   // vertical-align: text-bottom;
+}
+.payspan-checkbox-content {
+  margin-left: 41px;
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 20px;
+  color: $input-label-subtext;
+  text-transform: inherit;
+}
+
+app-form-checkbox.payspan-checkbox-uppercase-label {
+  .payspan-checkbox-label {
+    font-weight: 400;
+    color: $dropdown-text;
+    letter-spacing: 0.5px;
+   text-transform: uppercase;
+  }
+}
+app-input.payspan-input--small {
+  width: 50px;
+  display: inline-block;
+}
+
+app-input.payspan-input--medium {
+  width: 100px;
+  display: inline-block;
+}
+
+app-input.payspan-input--large {
+  width: 500px;
+  display: inline-block;
+}
+
+app-input.payspan-input--creditcard {
+  width: 222px;
+  display: inline-block;
+}
