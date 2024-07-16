@@ -32,6 +32,7 @@ import { PaymentsWpModule } from 'payments-wp' //add the import
 export class AppModule { }
 ```
 
+in your client application
 ```js
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { WPModel } from './response.wp.model';
@@ -47,7 +48,7 @@ import { PaymentsWpComponent } from 'payments-wp';
 export class AppComponent implements OnInit {
   title = 'test-library-env';
   payPageID: string = "payPageID";
-  wpUrl: string = "https://request.eprotect.vantivprelive.com";
+  wpUrl: string = "wp pre live rul XXXXX.vantivprelive.com";
   wpResp: WPModel | undefined;
   cardTypes: string[] = ["AmericanExpress", "Visa", "MasterCard", "Discover"];
   @ViewChild(PaymentsWpComponent) child: PaymentsWpComponent;
@@ -70,7 +71,6 @@ export class AppComponent implements OnInit {
 
 ```
 
-in your client
 ```html
 <youe_component>
       <lib-payments-wp
