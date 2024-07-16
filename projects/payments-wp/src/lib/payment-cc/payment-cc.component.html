@@ -48,16 +48,16 @@
     <div class="row">
         <div class="col-sm-12 pay-align">
             <div class="pay__icons-label">{{'Supported card types'}} </div>
-            <div>
+            <div *ngIf="visa">
                 <img alt="visa" src="../../../assets/svg/visa.svg" class="svgIcon">
             </div>
-            <div>
+            <div *ngIf="master">
                 <img alt="master" src="../../../assets/svg/masterCard.svg" class="svgIcon">
             </div>
-            <div>
+            <div *ngIf="amex">
                 <img alt="amex" src="../../../assets/svg/amex.svg" class="svgIcon">
             </div>
-            <div>
+            <div *ngIf="discover">
                 <img alt="discover" src="../../../assets/svg/discover.svg" class="svgIcon">
             </div>
         </div>

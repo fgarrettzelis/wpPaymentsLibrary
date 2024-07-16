@@ -11,6 +11,7 @@ import { PayInvoiceComponent } from '../lib/pay-invoice/pay-invoice-component';
 export class PaymentsWpComponent implements OnInit{
   @Input() payPageID: string;
   @Input() wpUrl: string;
+  @Input() cardTypes: string[] = ["AmericanExpress", "Visa", "MasterCard", "Discover"];
   @Output() wpRes: EventEmitter<any> = new EventEmitter();
 
   @ViewChild(PayInvoiceComponent) child: PayInvoiceComponent;

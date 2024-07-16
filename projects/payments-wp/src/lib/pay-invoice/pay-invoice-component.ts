@@ -32,6 +32,7 @@ declare var eProtect: any;
 export class PayInvoiceComponent extends PaymentMethodBaseComponent implements OnInit, AfterViewInit {
   @Input() payPageID: string;
   @Input() wpUrl: string;
+  @Input() cardTypes: string[] = ["AmericanExpress", "Visa", "MasterCard", "Discover"];
   @Output() wpResult: EventEmitter<any> = new EventEmitter();
   @Output() nextView = new EventEmitter<InvoicePaymentsResponse>();
 
@@ -135,8 +136,8 @@ export class PayInvoiceComponent extends PaymentMethodBaseComponent implements O
     const now = new Date();    
     this.paymentDate = formatDate(now, 'MM/dd/yyyy', 'en-US');    
     this.orgAcceptedPaymentTypes.push("Card");    
-    this.orgAcceptedCreditCards = [ "Ach", "GooglePay", "ApplePay", "Card" ];
-    this.termsTooltip = 'Please read and print the Terms and Conditions.';    
+    this.orgAcceptedCreditCards = this.cardTypes;
+    this.termsTooltip = 'Please read and print the Terms and Conditions.';
     this.initializeForm();
 
   }

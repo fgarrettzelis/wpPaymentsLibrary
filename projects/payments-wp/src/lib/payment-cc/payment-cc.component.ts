@@ -37,6 +37,10 @@ export class PaymentCcComponent extends PaymentMethodBaseComponent implements On
   public expirationMonth: UntypedFormControl;
   public cvvCode: UntypedFormControl;
   wpCardError: string = "";
+  visa: boolean = false;
+  master: boolean = false;
+  amex: boolean = false;
+  discover: boolean = false;
 
   constructor(
     private paymentService: PaymentService) {
@@ -59,6 +63,20 @@ export class PaymentCcComponent extends PaymentMethodBaseComponent implements On
     this.paymentService.wpCCError.subscribe(err => {
       this.wpCardError = err;
     })
+  }
+
+  cards() {
+    this.orgAcceptedCreditCards.forEach(element => {
+      if(element === "Visa") {
+        this.visa = true;
+      } else if(element === "MasterCard") {
+        this.master = true;
+      } else if(element === "AmericanExpress") {
+        this.amex = true;
+      } else if(element === "Discover") {
+        this.discover = true;
+      }
+    });
   }
 
   setUp(){
