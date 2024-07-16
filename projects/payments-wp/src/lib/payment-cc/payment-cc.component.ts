@@ -18,6 +18,7 @@ export class PaymentCcComponent extends PaymentMethodBaseComponent implements On
   @Input() paymentForm: UntypedFormGroup;
   @Input() nameOnLabel: string;
   @Input() override orgAcceptedCreditCards: Array<string>;
+  @Input() cardTypes: string[] = ["AmericanExpress", "Visa", "MasterCard", "Discover"];
   @Output() givebackCardNumControl: EventEmitter<any> = new EventEmitter();
   @Output() givebackCVVControl: EventEmitter<any> = new EventEmitter();
 
@@ -63,10 +64,11 @@ export class PaymentCcComponent extends PaymentMethodBaseComponent implements On
     this.paymentService.wpCCError.subscribe(err => {
       this.wpCardError = err;
     })
+    this.cards();
   }
 
   cards() {
-    this.orgAcceptedCreditCards.forEach(element => {
+    this.cardTypes.forEach(element => {
       if(element === "Visa") {
         this.visa = true;
       } else if(element === "MasterCard") {

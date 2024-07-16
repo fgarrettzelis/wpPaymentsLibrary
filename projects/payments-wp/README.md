@@ -33,36 +33,39 @@ export class AppModule { }
 ```
 
 ```js
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { PayInvoices } from './payment-cc/payment.model';
-import { PayInvoiceComponent } from '../lib/pay-invoice/pay-invoice-component';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { WPModel } from './response.wp.model';
+import { PaymentsWpComponent } from 'payments-wp';
+
 
 @Component({
-  selector: 'lib-payments-wp',
-  templateUrl: './payments-wp.component.html',
-  styles: [
-  ]
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
-export class PaymentsWpComponent implements OnInit{
-  @Input() payPageID: string;
-  @Input() wpUrl: string;
-  @Output() wpRes: EventEmitter<any> = new EventEmitter();
 
-  @ViewChild(PayInvoiceComponent) child: PayInvoiceComponent;
-
-  payInvoices = new PayInvoices;
-
+export class AppComponent implements OnInit {
+  title = 'test-library-env';
+  payPageID: string = "payPageID";
+  wpUrl: string = "https://request.eprotect.vantivprelive.com";
+  wpResp: WPModel | undefined;
+  cardTypes: string[] = ["AmericanExpress", "Visa", "MasterCard", "Discover"];
+  @ViewChild(PaymentsWpComponent) child: PaymentsWpComponent;
+  
   ngOnInit(): void {
 
+
   }
 
-  invokeWP() {
-    this.child.submitPaymentWP(this.child.paymentForm.value);
+  invoke() {
+    this.child.invokeWP();
   }
 
-  wpResult(event: any) {
-    this.wpRes.emit(event);
+  results(event: any) {
+    console.log("results from wp", event);
+    this.wpResp = event;
   }
+
 }
 
 ```
@@ -70,11 +73,14 @@ export class PaymentsWpComponent implements OnInit{
 in your client
 ```html
 <youe_component>
-    <lib-payments-wp
-        [payPageID]="payPageID" 
-        [wpUrl]="wpUrl" 
-        (wpRes)="results($event)">
-    </lib-payments-wp>
+      <lib-payments-wp
+          [payPageID]="payPageID"
+          [wpUrl]="wpUrl"
+          [cardTypes]="cardTypes"
+          (wpRes)="results($event)">
+      </lib-payments-wp>    
     {{response}}
+    <button (click)="invoke()">invoke WP</button>    
+    {{wpResp | json}}
 </youe_component>
 ```

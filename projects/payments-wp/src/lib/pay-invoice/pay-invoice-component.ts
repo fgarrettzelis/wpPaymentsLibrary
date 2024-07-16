@@ -137,7 +137,7 @@ export class PayInvoiceComponent extends PaymentMethodBaseComponent implements O
     this.paymentDate = formatDate(now, 'MM/dd/yyyy', 'en-US');    
     this.orgAcceptedPaymentTypes.push("Card");    
     this.orgAcceptedCreditCards = this.cardTypes;
-    this.termsTooltip = 'Please read and print the Terms and Conditions.';
+    this.termsTooltip = 'Please read and print the Terms and Conditions.';    
     this.initializeForm();
 
   }

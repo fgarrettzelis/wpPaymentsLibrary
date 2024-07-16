@@ -13,7 +13,8 @@
                 <div *ngIf="selectedPaymentMethodType===PAYMENTMETHOD_CC">
                   <app-payment-cc [paymentForm]="paymentForm" 
                                   [nameOnLabel]="nameOnLabel" 
-                                  [orgAcceptedCreditCards]="orgAcceptedCreditCards" 
+                                  [orgAcceptedCreditCards]="orgAcceptedCreditCards"
+                                  [cardTypes]="cardTypes" 
                                   (givebackCardNumControl)="getBackCardNumControl($event)"
                                   (givebackCVVControl)="getBackCVVControl($event)">
                   </app-payment-cc>
