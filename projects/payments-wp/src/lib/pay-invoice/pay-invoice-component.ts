@@ -2,7 +2,7 @@
 import {UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, ValidatorFn, Validators} from '@angular/forms';
 import {ValidationPatterns} from '../models/validation-patterns';
 // import {NgbDateParserFormatter, NgbModal} from '@ng-bootstrap/ng-bootstrap';
-// import {cardNumberValid, cardTypeValid} from '../validator/creditcard.validator';
+import {cardNumberValid, cardTypeValid} from '../validator/creditcard.validator';
 import {PaymentMethodBaseComponent} from '../payment-method-base.component';
 import {PaymentResponse} from '../models/payment.model';
 import {  CardPaymentMethod, InvoicePaymentsResponse, PaymentMethod, GooglePaymentResponse, ApplePaymentResponse, WPFields, WPEprotectRequest} from "../payment-cc/payment.model";
@@ -200,7 +200,8 @@ export class PayInvoiceComponent extends PaymentMethodBaseComponent implements O
     this.nameOnLabel = 'name on card';
     this.zipTooltip = 'obp.zip-tooltip';
     this.saveTitle = 'payment.save-card';
-    this.cardNumber = new UntypedFormControl('', Validators.compose([Validators.required, Validators.maxLength(19)]));
+    //this.cardNumber = new UntypedFormControl('', Validators.compose([Validators.required, Validators.maxLength(19)]));
+    this.cardNumber = new UntypedFormControl('', Validators.compose([cardNumberValid as any, cardTypeValid(this.orgAcceptedCreditCards) as any, Validators.required, Validators.maxLength(19)]));
     this.cvvCode = new UntypedFormControl('', Validators.compose([Validators.required, Validators.maxLength(4), Validators.minLength(3), Validators.pattern(ValidationPatterns.code)]));
     this.expirationYear = new UntypedFormControl(('Year'), Validators.compose([Validators.required, Validators.pattern(ValidationPatterns.code)]));
     this.expirationMonth = new UntypedFormControl(('Month'), Validators.compose([Validators.required, Validators.pattern(ValidationPatterns.code)]));
