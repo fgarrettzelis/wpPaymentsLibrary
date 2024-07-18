@@ -84,3 +84,41 @@ export class AppComponent implements OnInit {
     {{wpResp | json}}
 </youe_component>
 ```
+
+wp response codes
+```js
+if(response.response == '870') {
+      alert("Success");
+    }
+    else if(response.response == '871') {
+        alert("Invalid card number.  Check and retry. (Not Mod10)");
+    }
+    else if(response.response == '872') {
+        alert("Invalid card number.  Check and retry. (Too short)");
+    }
+    else if(response.response == '873') {
+        alert("Invalid card number.  Check and retry. (Too long)");
+    }
+    else if(response.response == '874') {
+        alert("Invalid card number.  Check and retry. (Not a number)");
+    } 
+    else if(response.response == '875') {
+        alert("We are experiencing technical difficulties. Please try again later or call 555-555-1212");
+    }
+    else if(response.response == '876') {
+        alert("Invalid card number.  Check and retry. (Failure from Server)");
+    }
+    else if(response.response == '881') {
+        alert("Invalid card validation code.  Check and retry. (Not a number)");
+    }
+    else if(response.response == '882') {
+        alert("Invalid card validation code.  Check and retry. (Too short)");
+    }
+    else if(response.response == '883') {
+        alert("Invalid card validation code.  Check and retry. (Too long)");
+    }
+    else if(response.response == '889') {
+        alert("We are experiencing technical difficulties. Please try again later or call 555-555-1212");
+    }
+
+```
